@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<title>Pesticídy na území SR</title>
+		
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'bootstrap4/css/bootstrap.min.css'%}" title="" type="text/css" />
+	<link rel="stylesheet" href="{% static 'font_awesome4/font-awesome-4.7.0/css/font-awesome.min.css'%}" title="" type="text/css" />
+	<style>
+      	/* Always set the map height explicitly to define the size of the div
+      	 * element that contains the map. */
+         #map {
+        	height: 80%;
+         }
+         /* Optional: Makes the sample page fill the window. */
+         html, body {
+        	height: 100%;
+       		margin: 0;
+        	padding: 0;
+         }
+        </style>
+</head>
+
+ <body class="body bg-white">
+<nav class="navbar navbar-light justify-content-between">
+    <a class="navbar-brand">
+	 <h2 class="h2">Mapa pesticídov na území SR</h2>
+	 <span class="fa fa-shower fa-2x pull-left"></span>
+	 <img class="img-fluid" style="float:left;width:100px;height:auto" src="https://upload.wikimedia.org/wikipedia/commons/8/8d/1-MAPA-SK-KRAJE-MESTA_PSV.png" alt="" />
+    </a>
+       	<form class="form-inline">
+   	  <div class="container">
+            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav nav-pills">
+                <a href="#">
+                 <button type="button" class="btn btn-dark" style="margin: 20px"000>
+                  <span class="fa fa-history"></span>
+                  Historické vplyvy
+                 </button>
+                </a>
+                <a href="#">
+                 <button type="button" class="btn btn-dark" style="margin: 20px"000>
+                  <span class="fa fa-map-marker"></span>
+                  Aktuálne vplyvy
+                 </button>
+                </a>
+                <a href="#">
+                 <button type="button" class="btn btn-dark" style="margin: 20px"000>
+                  <span class="fa fa-database"></span>
+                  Dátové zdroje
+                 </button>
+                </a>
+            </ul>
+            </ul>
+    	  </div> 
+	</form>
+</nav>
+
+<!--google maps--!>
+
+<div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 48.765, lng: 19.783},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9jeE5K7Ny4oDbiOD2YatCjuJIf4s1QuE&callback=initMap"
+    async defer></script>
+<div class="container body-content">
+<hr />
+<footer>
+	<p>Svetozár Korytiak & Stanislav Motyčka</p>
+</footer>
+</div>
+ </body>
+</html>
